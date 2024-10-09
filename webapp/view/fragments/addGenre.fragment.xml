@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Dialog id="addGenreDialog" title="{i18n>addGenresTitle}">
+        <beginButton>
+            <Button id="closeBtn" text="{i18n>cancelButton}" press=".baseCloseDialog('addGenre')" />
+        </beginButton>
+        <endButton>
+            <Button id="sendBtn" text="{i18n>submitButton}" press=".onSubmitNewGenre" />
+        </endButton>
+        <f:SimpleForm id="addGenreForm" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" singleContainerFullSize="false">
+            <f:content>
+                <Label id="lName" text="{i18n>genresName}" />
+                <Input id="genreNameInput" placeholder="{i18n>enterGenreName}" value="{newGenreData>/name}" />
+                <Label id="lDescription" text="{i18n>genresDescription}" />
+                <Input id="genreDescrInput" placeholder="{i18n>enterGenreDescription}" value="{newGenreData>/descr}" />
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>

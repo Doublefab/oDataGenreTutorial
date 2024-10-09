@@ -1,0 +1,46 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>genresPageTitle}">
+        <content>
+            <!-- Aggiungi Toolbar con barra di ricerca -->
+            <Panel>
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>genresTableTitle}" />
+                        <ToolbarSpacer />
+                        <SearchField width="50%" search="onSearch" />
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- Tabella dei Generi -->
+                <Table id="genresTable" items="{path: '/Genres'}">
+                    <columns>
+                        <Column>
+                            <Text text="{i18n>genresName}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>genresDescription}" />
+                        </Column>
+                        <Column hAlign="Right">
+                            <Text text="{i18n>delete}" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press="onPress">
+                            <cells>
+                                <Text text="{name}" />
+                                <Text text="{descr}" />
+                                <!-- Aggiungi pulsante Delete -->
+                                <Button icon="sap-icon://delete" type="Transparent" press="onDelete" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+                <!-- Pulsante per aggiungere un nuovo genere -->
+                <Button text="{i18n>addGenresButton}" press="onAddGenre" />
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

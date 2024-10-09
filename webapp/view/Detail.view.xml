@@ -1,0 +1,62 @@
+<mvc:View controllerName="project1.controller.Detail"
+    xmlns:m="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc">
+    
+    <uxap:ObjectPageLayout id="ObjectPageLayout"
+        useIconTabBar="false"
+        showTitleInHeaderContent="true">
+        
+        <!-- Header Title con pulsanti Edit e Delete -->
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <!-- Pulsanti nella toolbar del titolo espanso -->
+                <uxap:actions>
+                    <m:Button text="Edit" type="Emphasized" press="onEdit"/>
+                    <m:Button text="Delete" type="Transparent" press="onDelete" icon="sap-icon://delete"/>
+                </uxap:actions>
+
+                <!-- Titolo espanso -->
+                <uxap:expandedHeading>
+                    <m:HBox justifyContent="SpaceBetween" alignItems="Center">
+                        <m:Title text="{path: 'name'}" wrapping="true"/>
+                        <!-- Aggiunta di un'icona o azioni aggiuntive a destra, se necessario -->
+                    </m:HBox>
+                </uxap:expandedHeading>
+
+                <!-- Titolo contratto (snapped) -->
+                <uxap:snappedHeading>
+                    <m:Title text="{path: 'name'}"/>
+                </uxap:snappedHeading>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <!-- Contenuto della pagina -->
+        <uxap:sections>
+            <!-- Sezione per la descrizione -->
+            <uxap:ObjectPageSection title="Descrizione">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <!-- Testo descrittivo -->
+                            <m:Text text="{path: 'descr'}" wrapping="true"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Sezione per azioni o informazioni aggiuntive (opzionale) -->
+            <uxap:ObjectPageSection title="Altre informazioni">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <!-- Aggiungi altri controlli o informazioni qui -->
+                            <m:Text text="Altre informazioni qui..."/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+
+    </uxap:ObjectPageLayout>
+</mvc:View>
